@@ -135,3 +135,32 @@ Verified:
 
 Result:
 - PASS (documentation references visible on remote `main`)
+
+## 8) Full-Thorough Retest Synchronization (Post-Release)
+
+Date (UTC): 2026-07-16
+
+### 8.1 Retest Commands
+- `.\.venv\Scripts\python -m pytest -q`
+- `powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1`
+- `.\.venv\Scripts\python -m streamlit run src\gui\dashboard.py --server.address 127.0.0.1 --server.port 8501 --browser.gatherUsageStats false`
+- `curl -I http://127.0.0.1:8501`
+
+### 8.2 Retest Results
+- Pytest: PASS (`............ [100%]`)
+- Preflight: PASS (`PREFLIGHT_STATUS=OK`)
+  - env/risk/range checks: OK
+  - missing Binance key/secret: WARN (expected for paper/test)
+- Streamlit startup: PASS (server started on `127.0.0.1:8501`)
+- HTTP smoke: PASS (`HTTP/1.1 200 OK`)
+- Runtime logs: PASS
+  - `services.ml_predictor | ML backend: xgboost`
+  - `gui.dashboard | UI update ...`
+
+### 8.3 Process Cleanup Note
+- `streamlit.exe` name-based kill did not match (runtime under `python.exe`).
+- Streamlit instance used in retest was terminated via `python.exe` kill for its PID.
+- An additional unrelated `python.exe` process returned access denied and does not block release-finalization scope.
+
+### 8.4 Final Retest Status
+- PASS (full-thorough retest evidence synchronized)
