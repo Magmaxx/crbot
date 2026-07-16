@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased] - Ops Automation Phase-2 Release Package
+## [v0.2.0] - 2026-07-16
 
 ### Added
 - `scripts/restore_project.ps1`

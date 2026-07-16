@@ -1,4 +1,4 @@
-# Release Notes — Ops Automation Phase-2
+# Release Notes — v0.2.0 (Ops Automation Phase-2)
 
 ## Özet
 Bu sürüm, operasyonel güvenilirlik ve geri alınabilirlik odaklı bir sertleştirme paketidir.  
