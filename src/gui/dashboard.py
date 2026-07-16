@@ -1,7 +1,15 @@
 import logging
 import hashlib
+import os
+import sys
 from typing import Tuple
-from datetime import datetime, date
+from datetime import datetime, date, timezone
+
+# Ensure project root is available for `from src...` imports when run via Streamlit script path.
+_CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+_PROJECT_ROOT = os.path.abspath(os.path.join(_CURRENT_DIR, "..", ".."))
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -330,6 +338,8 @@ def run_dashboard():
             {"field": "use_testnet", "value": snap.get("use_testnet")},
         ]
     )
+    status_df["field"] = status_df["field"].astype(str)
+    status_df["value"] = status_df["value"].astype(str)
     st.dataframe(status_df, width="stretch", hide_index=True)
 
     st.markdown("### Son İşlem Geçmişi")
@@ -405,13 +415,17 @@ def run_dashboard():
             ].drop(columns=["_time_dt"], errors="ignore")
 
         st.caption(f"Filtrelenmiş kayıt: {len(filtered_df)} / Toplam: {len(full_history_df)}")
-        st.dataframe(filtered_df.tail(200), width="stretch")
+        display_df = filtered_df.tail(200).copy()
+        for col in display_df.columns:
+            if display_df[col].dtype == "object":
+                display_df[col] = display_df[col].astype(str)
+        st.dataframe(display_df, width="stretch")
 
         csv_data = filtered_df.to_csv(index=False).encode("utf-8")
         st.download_button(
             "CSV İndir (Filtrelenmiş)",
             data=csv_data,
-            file_name=f"trade_history_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.csv",
+            file_name=f"trade_history_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}.csv",
             mime="text/csv",
         )
 

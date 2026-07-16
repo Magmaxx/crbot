@@ -21,3 +21,10 @@
 - [x] 15) `CHANGELOG.md` oluştur/güncelle (Added/Changed/Fixed/Testing)
 - [x] 16) `RELEASE_NOTES.md` oluştur (kapsam, doğrulama, rollback referansı)
 - [x] 17) Release-package dokümantasyonunu son kontrolle tamamla
+
+## Yeni Faz-4 (UI Runtime Fix + Thorough Test)
+- [x] 18) `src/gui/dashboard.py` import-path hatasını düzelt (`ModuleNotFoundError: src`)
+- [x] 19) Streamlit dashboard’u tekrar başlatıp runtime hatasız açıldığını doğrula
+- [x] 20) 8501 endpoint smoke testini (`curl`) geçir
+- [x] 21) Dashboard temel UI akışını (sidebar seçimleri/grafik/metrikler) doğrula
+- [x] 22) Son test özeti + PR durumu ile kapanış
