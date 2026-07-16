@@ -300,7 +300,13 @@ Beklenen:
 - `BINANCE_API_KEY` / `BINANCE_API_SECRET` yoksa paper/test için WARN üretilebilir
 - Çıkışta `PREFLIGHT_STATUS=OK`
 
-## 15) Release Checklist
+## 15) Release References
+- GitHub Release (v0.2.0):
+  - https://github.com/Magmaxx/crbot/releases/tag/v0.2.0
+- Final Validation Report:
+  - `FINAL_VALIDATION_REPORT.md`
+
+## 16) Release Checklist
 - [x] `.env` doğrulandı
 - [x] Paper mode doğrulandı
 - [x] Risk profilleri test edildi

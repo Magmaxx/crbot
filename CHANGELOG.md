@@ -2,6 +2,9 @@
 
 ## [v0.2.0] - 2026-07-16
 
+Release:
+- GitHub Release: https://github.com/Magmaxx/crbot/releases/tag/v0.2.0
+
 ### Added
 - `scripts/restore_project.ps1`
   - Klasör veya `.zip` kaynaktan proje restore akışı.
