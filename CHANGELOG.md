@@ -29,6 +29,9 @@
   - Preflight beklentileri ve release checklist revize edildi.
 - `TODO.md`
   - Ops Automation Phase-2 maddeleri tamamlandı ve işaretlendi.
+- `src/gui/dashboard.py`
+  - Trade history zaman penceresi hesaplarında `pd.Timestamp.utcnow()` kullanımı kaldırıldı.
+  - Pandas deprecation uyumu için `pd.Timestamp.now("UTC")` kullanımı standartlaştırıldı.
 
 ### Fixed
 - Pytest collection çakışması:
@@ -52,3 +55,4 @@
   - `logs/launcher.log` kayıt üretimi PASS
 - Curl smoke:
   - `http://localhost:8510/` => HTTP 200 PASS
+  - `http://127.0.0.1:8501/` => HTTP 200 PASS

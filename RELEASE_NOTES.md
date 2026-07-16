@@ -33,6 +33,9 @@ Ana amaç: backup/restore, preflight doğrulama, launcher/doğrulama akışları
   - preflight beklentileri
   - release checklist tamamlandı
 - `TODO.md` tüm Ops Automation Phase-2 maddeleri tamamlandı.
+- `src/gui/dashboard.py` follow-up cleanup:
+  - `pd.Timestamp.utcnow()` kaldırıldı
+  - `pd.Timestamp.now("UTC")` ile deprecation uyumu sağlandı
 
 ## Test ve Doğrulama Sonuçları
 
@@ -58,6 +61,7 @@ Ana amaç: backup/restore, preflight doğrulama, launcher/doğrulama akışları
 
 ### Ek HTTP Smoke
 - `http://localhost:8510/` => HTTP 200 PASS
+- `http://127.0.0.1:8501/` => HTTP 200 PASS
 
 ## Bilinen Notlar
 - Ortamda `git` CLI yüklü olmadığı için branch/tag/commit otomasyonu bu aşamada uygulanmadı.
