@@ -355,7 +355,7 @@ def run_dashboard():
             close_df["_time_dt"] = pd.to_datetime(close_df.get("time"), errors="coerce", utc=True)
             close_df["_pnl"] = pd.to_numeric(close_df.get("pnl"), errors="coerce").fillna(0.0)
 
-            now_utc = pd.Timestamp.utcnow()
+            now_utc = pd.Timestamp.now("UTC")
             day_cut = now_utc - pd.Timedelta(days=1)
             week_cut = now_utc - pd.Timedelta(days=7)
 
