@@ -1,0 +1,263 @@
+2026-07-14 19:54:18 | INFO | services.ml_predictor | ML backend: xgboost
+2026-07-14 19:54:29 | INFO | services.trading_engine | PAPER OPEN side=LONG entry=64779.02 sl=64519.90 tp=65245.43 qty=0.385927
+2026-07-14 19:54:30 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.818 down=0.182
+2026-07-14 19:55:03 | INFO | services.trading_engine | PAPER OPEN side=SHORT entry=64784.58 sl=65590.49 tp=63333.95 qty=0.124084
+2026-07-14 19:55:04 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=4h dir=SHORT up=0.344 down=0.656
+2026-07-14 19:55:16 | INFO | services.trading_engine | PAPER OPEN side=SHORT entry=64783.24 sl=65589.15 tp=63332.61 qty=0.248168
+2026-07-14 19:55:16 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=4h dir=SHORT up=0.344 down=0.656
+2026-07-14 19:55:31 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=4h dir=SHORT up=0.156 down=0.844
+2026-07-14 19:55:49 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=4h dir=HOLD up=0.455 down=0.545
+2026-07-15 21:01:58 | INFO | services.ml_predictor | ML backend: xgboost
+2026-07-15 21:02:14 | INFO | services.trading_engine | PAPER OPEN mode=SCALP_SPOT side=LONG entry=65022.64 sl=64762.55 tp=65490.80 qty=0.384481
+2026-07-15 21:02:15 | INFO | services.trading_engine | PAPER OPEN mode=SCALP_SPOT side=LONG entry=65022.64 sl=64762.55 tp=65490.80 qty=0.384481
+2026-07-15 21:02:16 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.853 down=0.147
+2026-07-15 21:02:54 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.918 down=0.082
+2026-07-15 21:03:18 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.961 down=0.039
+2026-07-15 21:06:58 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Varolan bir bağlantı uzaktaki bir ana bilgisayar tarafından zorla kapatıldı
+2026-07-15 21:07:05 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.591 down=0.409
+2026-07-15 21:07:29 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.932 down=0.068
+2026-07-15 21:15:07 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.526 down=0.474
+2026-07-15 21:47:34 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=1m dir=LONG up=0.660 down=0.340
+2026-07-15 21:47:52 | INFO | gui.dashboard | UI update | symbol=BNB/USDT timeframe=1m dir=SHORT up=0.233 down=0.767
+2026-07-15 21:48:01 | INFO | gui.dashboard | UI update | symbol=SOL/USDT timeframe=1m dir=SHORT up=0.277 down=0.723
+2026-07-15 21:48:18 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=1m dir=LONG up=0.648 down=0.352
+2026-07-15 21:48:45 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=5m dir=LONG up=0.617 down=0.383
+2026-07-15 21:48:52 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=15m dir=SHORT up=0.236 down=0.764
+2026-07-15 21:49:00 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=1h dir=HOLD up=0.507 down=0.493
+2026-07-15 21:49:07 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=4h dir=SHORT up=0.190 down=0.810
+2026-07-15 21:49:29 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=4h dir=SHORT up=0.167 down=0.833
+2026-07-15 21:49:39 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=4h dir=SHORT up=0.190 down=0.810
+2026-07-15 21:50:09 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=4h dir=SHORT up=0.167 down=0.833
+2026-07-16 00:06:37 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.641 down=0.359
+2026-07-16 00:06:50 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.641 down=0.359
+2026-07-16 00:11:07 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Varolan bir bağlantı uzaktaki bir ana bilgisayar tarafından zorla kapatıldı
+2026-07-16 00:11:14 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.849 down=0.151
+2026-07-16 00:11:29 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.752 down=0.248
+2026-07-16 00:16:22 | INFO | services.ml_predictor | ML backend: xgboost
+2026-07-16 00:16:33 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=LONG entry=64905.87 sl=64646.25 tp=65373.19 qty=0.385173
+2026-07-16 00:16:34 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=LONG entry=64905.87 sl=64646.25 tp=65373.19 qty=0.385173
+2026-07-16 00:16:38 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.590 down=0.410
+2026-07-16 00:16:53 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.769 down=0.231
+2026-07-16 00:17:03 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.340 down=0.660
+2026-07-16 00:17:23 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.735 down=0.265
+2026-07-16 00:17:28 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.735 down=0.265
+2026-07-16 00:17:33 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.762 down=0.238
+2026-07-16 00:17:38 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.819 down=0.181
+2026-07-16 00:17:43 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.819 down=0.181
+2026-07-16 00:17:48 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.839 down=0.161
+2026-07-16 00:17:53 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.839 down=0.161
+2026-07-16 00:17:59 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.844 down=0.156
+2026-07-16 00:20:30 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Varolan bir bağlantı uzaktaki bir ana bilgisayar tarafından zorla kapatıldı
+2026-07-16 00:20:38 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.734 down=0.266
+2026-07-16 00:20:55 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.148 down=0.852
+2026-07-16 00:21:33 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.382 down=0.618
+2026-07-16 00:21:49 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.370 down=0.630
+2026-07-16 00:24:18 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.733 down=0.267
+2026-07-16 00:26:39 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.761 down=0.239
+2026-07-16 03:38:02 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.460 down=0.540
+2026-07-16 03:39:44 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=SHORT entry=64526.00 sl=64784.10 tp=64061.41 qty=0.375924
+2026-07-16 03:39:44 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.379 down=0.621
+2026-07-16 03:39:56 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=LONG entry=64514.01 sl=64255.95 tp=64978.51 qty=0.375994
+2026-07-16 03:39:56 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.593 down=0.407
+2026-07-16 03:40:05 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.275 down=0.725
+2026-07-16 03:40:15 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.521 down=0.479
+2026-07-16 03:40:26 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.513 down=0.487
+2026-07-16 03:40:35 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.746 down=0.254
+2026-07-16 03:40:46 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.770 down=0.230
+2026-07-16 03:40:55 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.633 down=0.367
+2026-07-16 03:41:05 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.280 down=0.720
+2026-07-16 03:41:15 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.429 down=0.571
+2026-07-16 03:41:25 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.429 down=0.571
+2026-07-16 03:42:15 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.192 down=0.808
+2026-07-16 03:43:15 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.211 down=0.789
+2026-07-16 03:43:35 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.211 down=0.789
+2026-07-16 03:43:46 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.557 down=0.443
+2026-07-16 03:43:56 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.758 down=0.242
+2026-07-16 03:44:04 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=SHORT entry=1912.10 sl=1919.75 tp=1898.33 qty=12.686157
+2026-07-16 03:44:05 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=SHORT entry=1912.10 sl=1919.75 tp=1898.33 qty=12.686157
+2026-07-16 03:44:06 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=1m dir=SHORT up=0.286 down=0.714
+2026-07-16 03:44:16 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.775 down=0.225
+2026-07-16 03:44:25 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.738 down=0.262
+2026-07-16 03:44:36 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.748 down=0.252
+2026-07-16 03:44:45 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.748 down=0.252
+2026-07-16 03:44:55 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.748 down=0.252
+2026-07-16 03:45:06 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.328 down=0.672
+2026-07-16 03:45:15 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.328 down=0.672
+2026-07-16 03:45:25 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.314 down=0.686
+2026-07-16 03:45:35 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.313 down=0.687
+2026-07-16 03:45:45 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.328 down=0.672
+2026-07-16 03:45:56 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.328 down=0.672
+2026-07-16 03:46:06 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.328 down=0.672
+2026-07-16 03:46:17 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=HOLD up=0.460 down=0.540
+2026-07-16 03:46:26 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:46:36 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:46:47 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:46:58 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.422 down=0.578
+2026-07-16 03:47:14 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.357 down=0.643
+2026-07-16 03:47:57 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:48:05 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:48:24 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:48:34 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:48:45 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:48:56 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.338 down=0.662
+2026-07-16 03:49:05 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.347 down=0.653
+2026-07-16 03:49:15 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.363 down=0.637
+2026-07-16 03:49:20 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.363 down=0.637
+2026-07-16 03:49:30 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.363 down=0.637
+2026-07-16 03:53:05 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.058 down=0.942
+2026-07-16 03:53:47 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.049 down=0.951
+2026-07-16 03:54:55 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.415 down=0.585
+2026-07-16 03:55:10 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.195 down=0.805
+2026-07-16 03:55:20 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.064 down=0.936
+2026-07-16 03:55:30 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.028 down=0.972
+2026-07-16 03:55:45 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.032 down=0.968
+2026-07-16 03:58:04 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.364 down=0.636
+2026-07-16 03:58:16 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.202 down=0.798
+2026-07-16 03:58:26 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.210 down=0.790
+2026-07-16 03:58:34 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.210 down=0.790
+2026-07-16 03:58:44 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.156 down=0.844
+2026-07-16 03:58:55 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.086 down=0.914
+2026-07-16 03:59:06 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.663 down=0.337
+2026-07-16 04:00:31 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.479 down=0.521
+2026-07-16 04:00:46 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.531 down=0.469
+2026-07-16 04:01:13 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.488 down=0.512
+2026-07-16 04:03:31 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.727 down=0.273
+2026-07-16 04:03:46 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.366 down=0.634
+2026-07-16 04:04:11 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=1m dir=HOLD up=0.466 down=0.534
+2026-07-16 04:04:48 | INFO | gui.dashboard | UI update | symbol=BNB/USDT timeframe=15m dir=SHORT up=0.299 down=0.701
+2026-07-16 04:04:57 | INFO | gui.dashboard | UI update | symbol=BNB/USDT timeframe=15m dir=SHORT up=0.299 down=0.701
+2026-07-16 15:41:53 | INFO | gui.dashboard | UI update | symbol=BNB/USDT timeframe=15m dir=LONG up=0.711 down=0.289
+2026-07-16 15:42:10 | INFO | gui.dashboard | UI update | symbol=BNB/USDT timeframe=15m dir=LONG up=0.711 down=0.289
+2026-07-16 15:42:40 | INFO | gui.dashboard | UI update | symbol=SOL/USDT timeframe=15m dir=LONG up=0.945 down=0.055
+2026-07-16 15:45:04 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.433 down=0.567
+2026-07-16 15:45:20 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.403 down=0.597
+2026-07-16 15:45:34 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=1m dir=HOLD up=0.503 down=0.497
+2026-07-16 15:45:44 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=1h dir=SHORT up=0.222 down=0.778
+2026-07-16 15:45:53 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=1h dir=SHORT up=0.212 down=0.788
+2026-07-16 15:46:03 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=1h dir=SHORT up=0.212 down=0.788
+2026-07-16 15:48:23 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.334 down=0.666 changed=True
+2026-07-16 15:48:38 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.476 down=0.524 changed=True
+2026-07-16 15:48:48 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=1m dir=LONG up=0.892 down=0.108 changed=True
+2026-07-16 15:48:56 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.404 down=0.596 changed=True
+2026-07-16 15:49:03 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.404 down=0.596 changed=True
+2026-07-16 15:49:12 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=SHORT up=0.404 down=0.596 changed=True
+2026-07-16 15:51:07 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.632 down=0.368 changed=True
+2026-07-16 15:51:18 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.629 down=0.371 changed=True
+2026-07-16 15:51:27 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.638 down=0.362 changed=True
+2026-07-16 15:51:38 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.629 down=0.371 changed=True
+2026-07-16 15:51:48 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.584 down=0.416 changed=True
+2026-07-16 15:51:58 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.584 down=0.416 changed=True
+2026-07-16 15:52:08 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.584 down=0.416 changed=True
+2026-07-16 15:52:18 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.600 down=0.400 changed=True
+2026-07-16 15:52:27 | INFO | gui.dashboard | UI update | symbol=ETH/USDT timeframe=15m dir=LONG up=0.600 down=0.400 changed=True
+2026-07-16 15:52:37 | INFO | gui.dashboard | UI update | symbol=BNB/USDT timeframe=15m dir=SHORT up=0.414 down=0.586 changed=True
+2026-07-16 15:52:46 | INFO | gui.dashboard | UI update | symbol=BNB/USDT timeframe=1h dir=SHORT up=0.104 down=0.896 changed=True
+2026-07-16 15:52:56 | INFO | gui.dashboard | UI update | symbol=SOL/USDT timeframe=1h dir=SHORT up=0.207 down=0.793 changed=True
+2026-07-16 15:53:03 | INFO | gui.dashboard | UI update | symbol=SOL/USDT timeframe=4h dir=SHORT up=0.357 down=0.643 changed=True
+2026-07-16 15:53:12 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=4h dir=LONG up=0.723 down=0.277 changed=True
+2026-07-16 15:53:20 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=1m dir=LONG up=0.716 down=0.284 changed=True
+2026-07-16 15:53:39 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=1m dir=HOLD up=0.528 down=0.472 changed=True
+2026-07-16 15:53:48 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=1m dir=SHORT up=0.372 down=0.628 changed=True
+2026-07-16 15:54:18 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=1m dir=LONG up=0.669 down=0.331 changed=True
+2026-07-16 15:54:30 | INFO | gui.dashboard | UI update | symbol=XRP/USDT timeframe=1m dir=LONG up=0.570 down=0.430 changed=True
+2026-07-16 15:55:53 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Varolan bir bağlantı uzaktaki bir ana bilgisayar tarafından zorla kapatıldı
+2026-07-16 15:56:00 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.343 down=0.657 changed=True
+2026-07-16 15:58:08 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.205 down=0.795 changed=True
+2026-07-16 15:58:19 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.155 down=0.845 changed=True
+2026-07-16 15:58:28 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.155 down=0.845 changed=True
+2026-07-16 15:58:39 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.707 down=0.293 changed=True
+2026-07-16 15:58:48 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.641 down=0.359 changed=True
+2026-07-16 15:58:59 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.590 down=0.410 changed=True
+2026-07-16 15:59:09 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.539 down=0.461 changed=True
+2026-07-16 15:59:19 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.539 down=0.461 changed=True
+2026-07-16 15:59:38 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.498 down=0.502 changed=True
+2026-07-16 15:59:51 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.233 down=0.767 changed=True
+2026-07-16 15:59:58 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.200 down=0.800 changed=True
+2026-07-16 16:00:13 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.610 down=0.390 changed=True
+2026-07-16 16:01:38 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.831 down=0.169 changed=True
+2026-07-16 16:01:47 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.730 down=0.270 changed=True
+2026-07-16 16:01:53 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=15m dir=LONG up=0.941 down=0.059 changed=True
+2026-07-16 16:04:40 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.817 down=0.183 changed=True
+2026-07-16 16:04:55 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.829 down=0.171 changed=True
+2026-07-16 16:05:05 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.702 down=0.298 changed=True
+2026-07-16 16:05:15 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.769 down=0.231 changed=True
+2026-07-16 16:06:17 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.398 down=0.602 changed=True
+2026-07-16 16:06:24 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.131 down=0.869 changed=True
+2026-07-16 16:09:50 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.396 down=0.604 changed=True
+2026-07-16 16:12:42 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mrtas\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Varolan bir bağlantı uzaktaki bir ana bilgisayar tarafından zorla kapatıldı
+2026-07-16 16:12:49 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.861 down=0.139 changed=True
+2026-07-16 16:13:03 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.794 down=0.206 changed=True
+2026-07-16 16:13:14 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.647 down=0.353 changed=True
+2026-07-16 16:15:28 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.864 down=0.136 changed=True
+2026-07-16 16:16:54 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.761 down=0.239 changed=True
+2026-07-16 16:19:09 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.436 down=0.564 changed=True
+2026-07-16 16:19:28 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.520 down=0.480 changed=True
+2026-07-16 16:20:02 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.611 down=0.389 changed=True
+2026-07-16 16:20:21 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=15m dir=LONG up=0.847 down=0.153 changed=True
+2026-07-16 16:20:40 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=15m dir=LONG up=0.800 down=0.200 changed=True
+2026-07-16 16:23:44 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.717 down=0.283 changed=True
+2026-07-16 16:27:11 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.316 down=0.684 changed=True
+2026-07-16 16:27:35 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=LONG entry=64192.33 sl=63935.56 tp=64654.51 qty=0.389455
+2026-07-16 16:27:35 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.784 down=0.216 changed=True
+2026-07-16 16:29:52 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=SHORT entry=64241.99 sl=64498.96 tp=63779.45 qty=0.389154
+2026-07-16 16:29:52 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.318 down=0.682 changed=True
+2026-07-16 16:30:22 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=SHORT entry=64333.80 sl=64591.14 tp=63870.60 qty=0.388598
+2026-07-16 16:30:22 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.142 down=0.858 changed=True
+2026-07-16 16:56:13 | INFO | services.trading_engine | PAPER OPEN mode=LEVERAGED_FUTURES side=LONG entry=64297.05 sl=64039.86 tp=64759.99 qty=0.388820
+2026-07-16 16:56:13 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.789 down=0.211 changed=True
+2026-07-16 17:01:04 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.764 down=0.236 changed=True
+2026-07-16 17:01:11 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.899 down=0.101 changed=True
+2026-07-16 17:01:20 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=HOLD up=0.537 down=0.463 changed=True
+2026-07-16 17:01:33 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.570 down=0.430 changed=True
+2026-07-16 17:01:42 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.591 down=0.409 changed=True
+2026-07-16 17:01:51 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.649 down=0.351 changed=True
+2026-07-16 17:02:03 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.701 down=0.299 changed=True
+2026-07-16 17:02:12 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.237 down=0.763 changed=True
+2026-07-16 17:03:14 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.764 down=0.236 changed=True
+2026-07-16 17:04:13 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=SHORT up=0.376 down=0.624 changed=True
+2026-07-16 17:04:21 | INFO | gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m dir=LONG up=0.741 down=0.259 changed=True

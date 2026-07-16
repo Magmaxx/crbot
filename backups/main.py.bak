@@ -1,0 +1,121 @@
+import asyncio
+import logging
+from typing import Optional
+
+from src.config import APP_CONFIG, RISK_PROFILES
+from src.core.models import Portfolio
+from src.data.exchange_stream import ExchangeStream
+from src.data.news_feed import fetch_news_sentiment_score
+from src.data.binance_sentiment import fetch_binance_futures_sentiment_bias
+from src.analytics.heatmap import combined_heatmap_bias
+from src.signal.engine import build_signal
+from src.risk.manager import (
+    can_open_new_position,
+    open_paper_position,
+    mark_to_market_and_close_if_needed,
+)
+
+logger = logging.getLogger("app-main")
+
+
+class TradingOrchestrator:
+    """
+    Iteration-1 orchestrator:
+    - WebSocket OHLCV + Orderbook
+    - News sentiment
+    - Hybrid signal
+    - Paper execution (risk manager)
+    """
+
+    def __init__(self):
+        self.config = APP_CONFIG
+        self.portfolio = Portfolio(
+            balance=self.config.initial_balance,
+            daily_start_balance=self.config.initial_balance,
+            risk_profile=self.config.default_risk_profile,
+            risk_profiles=RISK_PROFILES,
+        )
+        self.stream: Optional[ExchangeStream] = None
+        self._running = False
+
+    async def _setup(self):
+        self.stream = ExchangeStream(
+            exchange_id=self.config.exchange_id,
+            symbol=self.config.symbol,
+            timeframe=self.config.timeframe,
+            ccxt_verbose=self.config.ccxt_verbose,
+        )
+        await self.stream.connect()
+
+    async def _teardown(self):
+        if self.stream:
+            await self.stream.close()
+            self.stream = None
+
+    async def run(self):
+        self._running = True
+        await self._setup()
+        logger.info("TradingOrchestrator started.")
+
+        try:
+            while self._running:
+                ohlcv = await self.stream.watch_ohlcv()
+                orderbook = await self.stream.watch_order_book(limit=20)
+
+                if not ohlcv or len(ohlcv) < 60:
+                    await asyncio.sleep(0.1)
+                    continue
+
+                current_price = ohlcv[-1][4]
+                mark_to_market_and_close_if_needed(self.portfolio, current_price)
+
+                sentiment_score = fetch_news_sentiment_score(self.config.news_api_key)
+                market_sentiment_bias = fetch_binance_futures_sentiment_bias(self.config.symbol)
+                heatmap_bias = combined_heatmap_bias(
+                    orderbook=orderbook,
+                    market_sentiment_bias=market_sentiment_bias,
+                    depth=10,
+                )
+
+                signal = build_signal(
+                    ohlcv=ohlcv,
+                    sentiment_score=sentiment_score,
+                    heatmap_bias=heatmap_bias,
+                    confidence_threshold=self.config.confidence_threshold,
+                )
+
+                logger.info(
+                    "Signal=%s conf=%.2f price=%.2f rsi=%.2f sent=%.2f heat=%.2f source=%s",
+                    signal["action"],
+                    signal["confidence"],
+                    signal["price"],
+                    signal["rsi"],
+                    signal["sentiment"],
+                    signal["heatmap"],
+                    "binance-futures" if market_sentiment_bias is not None else "orderbook-fallback",
+                )
+
+                if signal["action"] in ("LONG", "SHORT") and can_open_new_position(self.portfolio):
+                    pos = open_paper_position(
+                        portfolio=self.portfolio,
+                        side=signal["action"],
+                        entry=signal["price"],
+                        atr_val=signal["atr"],
+                    )
+                    if pos:
+                        logger.info(
+                            "PAPER OPEN side=%s entry=%.2f sl=%.2f tp=%.2f qty=%.6f",
+                            pos.side,
+                            pos.entry_price,
+                            pos.stop_loss,
+                            pos.take_profit,
+                            pos.qty,
+                        )
+
+                await asyncio.sleep(0.2)
+        finally:
+            await self._teardown()
+            logger.info("TradingOrchestrator stopped.")
+
+    def stop(self):
+        self._running = False
