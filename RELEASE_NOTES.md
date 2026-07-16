@@ -1,5 +1,8 @@
 # Release Notes — v0.2.0 (Ops Automation Phase-2)
 
+## Official Release URL
+- https://github.com/Magmaxx/crbot/releases/tag/v0.2.0
+
 ## Özet
 Bu sürüm, operasyonel güvenilirlik ve geri alınabilirlik odaklı bir sertleştirme paketidir.  
 Ana amaç: backup/restore, preflight doğrulama, launcher/doğrulama akışları ve runbook uyumunu production hazırlık seviyesine taşımak.

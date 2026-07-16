@@ -108,3 +108,30 @@ Release-finalization validation for v0.2.0 is complete and clean:
 - Housekeeping/process cleanup: PASS
 
 No blocking items remain for this release-finalization scope.
+
+## 7) Post-Release Documentation Link Validation
+
+Date (UTC): 2026-07-16
+
+### 7.1 Documentation Reference Commit
+- Commit: `dec776f`
+- Message: `docs: add v0.2.0 release references to runbook and changelog`
+- Branch: `main`
+- Push: `origin/main` successful
+
+### 7.2 Remote Raw Verification (Post-commit)
+Command:
+- `curl -s https://raw.githubusercontent.com/Magmaxx/crbot/main/RUNBOOK.md`
+- `curl -s https://raw.githubusercontent.com/Magmaxx/crbot/main/CHANGELOG.md`
+
+Verified:
+- `RUNBOOK.md` contains:
+  - `## 15) Release References`
+  - `https://github.com/Magmaxx/crbot/releases/tag/v0.2.0`
+  - `FINAL_VALIDATION_REPORT.md`
+- `CHANGELOG.md` contains:
+  - `Release:`
+  - `GitHub Release: https://github.com/Magmaxx/crbot/releases/tag/v0.2.0`
+
+Result:
+- PASS (documentation references visible on remote `main`)
