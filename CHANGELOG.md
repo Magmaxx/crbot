@@ -1,5 +1,33 @@
 # Changelog
 
+## [v0.2.1] - 2026-07-16 (Draft)
+
+### Added
+- `/.github/workflows/ci.yml`
+  - GitHub Actions CI pipeline eklendi (Windows runner).
+  - `pytest -q` ve `scripts/preflight_check.ps1` adımlarıyla test-gated doğrulama.
+- `/.gitignore`
+  - Runtime artifact ve cache ignore kuralları eklendi:
+    - `logs/`, `*.log`
+    - `__pycache__/`, `*.py[cod]`
+    - `.pytest_cache/`, `.venv/`, vb.
+- `test_dashboard_smoke.py`
+  - Streamlit dashboard modülü için temel smoke test otomasyonu.
+  - `run_dashboard` entrypoint erişilebilirlik/doğrulama testi.
+
+### Changed
+- `RUNBOOK.md`
+  - Incident Response bölümü IR playbook formatına genişletildi:
+    - Severity sınıfları (SEV-1/2/3)
+    - İlk 5 dakika triage akışı
+    - Kill-switch, testnet fallback, rollback ve post-incident kapanış adımları
+
+### Testing
+- CI tasarımı: preflight + pytest birlikte zorunlu kapı olarak tanımlandı.
+- Yerel doğrulama (önerilen):
+  - `python -m pytest -q`
+  - `powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1`
+
 ## [v0.2.0] - 2026-07-16
 
 Release:

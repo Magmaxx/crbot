@@ -160,10 +160,83 @@ Risk panelinde şu alanları doğrulayın:
 
 Risk profili değişiminde metriklerin güncellendiğini doğrulayın (`low/balanced/aggressive`).
 
-## 9) Incident Response
-- API hata artışı: yeniden deneme + fallback doğrula
-- Anormal trade açma: trading engine risk limitlerini sıkılaştır
-- Model sapması: tahmin katmanını fallback mode’a çek (sklearn veya HOLD ağırlıklı)
+## 9) Incident Response (IR Playbook)
+
+### 9.1 Severity Sınıfları
+- **SEV-1 (Kritik):**
+  - Beklenmeyen canlı emir akışı / yanlış markette execution
+  - Kontrolsüz pozisyon açılması veya risk limit bypass
+  - Trade güvenliği açısından acil müdahale gerektiren durumlar
+- **SEV-2 (Yüksek):**
+  - Dashboard ciddi bozulma, veri akışında kalıcı kesinti
+  - Preflight/pytest başarısızlığı nedeniyle release blokajı
+  - API hata oranında sürekli artış, fakat kill-switch ile kontrol altında durum
+- **SEV-3 (Orta/Düşük):**
+  - Aralıklı gecikme/fallback, operasyonu tamamen durdurmayan hatalar
+  - Dokümantasyon/raporlama eksikleri
+
+### 9.2 İlk 5 Dakika Triage Akışı
+1. **Durumu sınıflandırın (SEV-1/2/3).**
+2. **Canlı execution riskini kesin:**
+   - `.env` içinde `EXECUTION_ENABLED=0` yapın.
+   - Gerekirse süreçleri durdurun (dashboard/bot).
+3. **Kanıt toplayın:**
+   - `logs/launcher.log`, `logs/trading_bot.log`
+   - Son trade history kayıtları
+   - Snapshot alanları (`execution_enabled`, `paper_only`, `use_testnet`, `trade_mode`)
+4. **Durum doğrulama komutları:**
+   ```powershell
+   cd telegram_bot
+   powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1
+   .\.venv\Scripts\python -m pytest -q
+   ```
+5. **İletişim:**
+   - Olay zamanı (UTC), etki alanı, alınan aksiyonlar tek satır özetle kaydedilir.
+
+### 9.3 Müdahale Runbook (Teknik)
+- **API hata artışı:**
+  - Yeniden deneme/fallback davranışını doğrulayın.
+  - Ağ/API erişimini kontrol edin, anahtar yetkilerini gözden geçirin.
+- **Anormal trade açma:**
+  - `EXECUTION_ENABLED=0` (kill-switch) uygulayın.
+  - Risk profili `low` seviyesine çekin.
+  - `ORDER_SIZE_PCT` ve `MAX_NOTIONAL_PCT` değerlerini konservatif seviyeye alın.
+- **Model sapması / tutarsız tahmin:**
+  - Tahmin katmanını fallback (HOLD ağırlıklı / alternatif backend) moda çekin.
+  - Veri imzası değişmeden tekrar train/predict tetiklenmediğini doğrulayın.
+
+### 9.4 Testnet Fallback ve Yeniden Açılış Kriterleri
+Canlı akıştan dönüş için önerilen sıra:
+1. `EXECUTION_ENABLED=1`, `PAPER_ONLY=1` (paper doğrulama)
+2. `EXECUTION_ENABLED=1`, `PAPER_ONLY=0`, `USE_TESTNET=1` (testnet)
+3. `USE_TESTNET=0` (live) sadece aşağıdakiler sağlandığında:
+   - preflight: `PREFLIGHT_STATUS=OK`
+   - pytest: PASS
+   - risk metrikleri normal
+   - incident kök nedeni izole edildi ve doğrulandı
+
+### 9.5 Rollback Kararı ve Uygulama
+Rollback koşulları:
+- SEV-1 tekrar ediyor veya kısa sürede giderilemiyor
+- Risk limitlerinin güvenli çalıştığı doğrulanamıyor
+- Testnet/paper doğrulama başarısız
+
+Uygulama:
+```powershell
+cd telegram_bot
+powershell -ExecutionPolicy Bypass -File .\scripts\restore_project.ps1 -Source ".\backups\project_backup_YYYYMMDD_HHMMSS.zip" -ProjectRoot "." -NoConfirm
+```
+Sonrasında:
+```powershell
+.\.venv\Scripts\python -m pytest -q
+powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1
+```
+
+### 9.6 Post-Incident Kapanış (24 saat içinde)
+- Kök neden analizi (RCA) yazın.
+- Önleyici aksiyonları backlog/TODO’ya ekleyin.
+- `RUNBOOK.md`, `CHANGELOG.md`, `RELEASE_NOTES.md` güncellemelerini yapın.
+- Gerekliyse yeni release patch (v0.2.x) hazırlayın.
 
 ## 10) EXE Paketleme (Opsiyonel)
 

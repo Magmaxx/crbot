@@ -1,3 +1,66 @@
+# Release Notes — v0.2.1 (Draft)
+
+## Official Release URL
+- Draft aşamasında (yayınlanmadı)
+
+## Özet
+Bu sürüm, v0.2.0 sonrası operasyonel sürdürülebilirliği artırmak için otomasyon ve hijyen güncellemeleri içerir.  
+Ana amaç: CI test-gate kurulumu, runtime artifact’lerin repodan dışlanması, dashboard smoke test otomasyonu ve incident-response playbook standardizasyonu.
+
+## Kapsam
+
+### 1) CI Pipeline (pytest + preflight)
+- `/.github/workflows/ci.yml` eklendi.
+- Windows tabanlı GitHub Actions job:
+  - bağımlılık kurulumu
+  - `scripts/preflight_check.ps1`
+  - `python -m pytest -q`
+- Amaç: PR/push aşamasında release öncesi teknik kapıların otomatik doğrulanması.
+
+### 2) Repository Hijyen / .gitignore Hardening
+- `/.gitignore` eklendi.
+- Aşağıdaki runtime/developer artifact’leri ignore kapsamına alındı:
+  - `logs/`, `*.log`
+  - `__pycache__/`, `*.py[cod]`
+  - `.pytest_cache/`, `.mypy_cache/`
+  - `.venv/` ve benzeri local env klasörleri
+  - lokal `.env` dosyaları
+
+### 3) Streamlit Smoke Test Automation
+- `test_dashboard_smoke.py` eklendi.
+- Dashboard modül import + entrypoint (`run_dashboard`) erişilebilirlik smoke testi otomatikleştirildi.
+- Amaç: temel dashboard entegrasyon kırılmalarını CI’da erken yakalamak.
+
+### 4) RUNBOOK Incident-Response Playbook Upgrade
+- `RUNBOOK.md` içindeki Incident Response bölümü genişletildi:
+  - Severity modeli (SEV-1/2/3)
+  - İlk 5 dakika triage checklist
+  - Kill-switch (`EXECUTION_ENABLED=0`) zorunlu aksiyon akışı
+  - Testnet fallback ve rollback karar kriterleri
+  - Post-incident kapanış ve RCA beklentileri
+
+## Test ve Doğrulama Sonuçları
+
+### CI Tasarımı
+- Preflight + Pytest birlikte zorunlu quality gate olarak tanımlandı.
+
+### Önerilen Lokal Doğrulama
+```powershell
+cd telegram_bot
+powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1
+.\.venv\Scripts\python -m pytest -q
+```
+
+## Bilinen Notlar
+- Bu doküman draft sürümdür; resmi release URL yayınlandığında güncellenecektir.
+- CI bağımlılık kurulumu `requirements.txt` mevcutluğuna göre fallback davranışı içerir.
+
+## Rollback Referansı
+- Rollback planı ve operasyon adımları: `ROLLBACK.md`
+- Restore aracı: `scripts/restore_project.ps1`
+
+---
+
 # Release Notes — v0.2.0 (Ops Automation Phase-2)
 
 ## Official Release URL

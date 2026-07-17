@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  test-and-preflight:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          if (Test-Path ".\requirements.txt") {
+            python -m pip install -r .\requirements.txt
+          } else {
+            python -m pip install pytest streamlit pandas plotly requests
+          }
+
+      - name: Run preflight checks
+        shell: pwsh
+        run: |
+          powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1
+
+      - name: Run pytest
+        shell: pwsh
+        run: |
+          python -m pytest -q
