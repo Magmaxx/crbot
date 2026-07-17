@@ -55,6 +55,21 @@ powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1
 - Bu doküman draft sürümdür; resmi release URL yayınlandığında güncellenecektir.
 - CI bağımlılık kurulumu `requirements.txt` mevcutluğuna göre fallback davranışı içerir.
 
+## Post-release Housekeeping (Validation Evidence Sync)
+- `FINAL_VALIDATION_REPORT.md` genişletilmiş kanıt seti ile senkronize edildi:
+  - API/HTTP retest kapsamı:
+    - `GET /` => 200
+    - `GET /_stcore/health` => 200 + `ok`
+    - `HEAD /static/index.html` => 200
+    - `POST /_stcore/health` => 405 (expected)
+    - Edge fallback path kontrolleri => 200 (SPA fallback expected)
+  - Manuel UI thorough doğrulama sonucu: PASS (operasyonel onay)
+  - Hijyen kapanışı:
+    - Streamlit süreçleri sonlandırıldı
+    - Runtime artifact değişiklikleri restore edildi
+- Housekeeping commit:
+  - `bb6fc00` — `docs: finalize validation report with extended API/manual UI evidence and hygiene checks`
+
 ## Rollback Referansı
 - Rollback planı ve operasyon adımları: `ROLLBACK.md`
 - Restore aracı: `scripts/restore_project.ps1`

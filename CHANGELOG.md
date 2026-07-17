@@ -28,6 +28,14 @@
   - `python -m pytest -q`
   - `powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1`
 
+### Post-release Housekeeping
+- `FINAL_VALIDATION_REPORT.md` güncellendi:
+  - Genişletilmiş API retest kanıtları (health/root/static/405/edge fallback).
+  - Manuel UI thorough doğrulama kapanış notları.
+  - Runtime artifact hijyen temizliği doğrulaması.
+- Housekeeping commit referansı:
+  - `bb6fc00` (`docs: finalize validation report with extended API/manual UI evidence and hygiene checks`)
+
 ## [v0.2.0] - 2026-07-16
 
 Release:
