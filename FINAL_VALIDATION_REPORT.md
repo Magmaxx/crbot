@@ -164,3 +164,76 @@ Date (UTC): 2026-07-16
 
 ### 8.4 Final Retest Status
 - PASS (full-thorough retest evidence synchronized)
+
+## 9) v0.2.1 Follow-up Validation (CI Hardening + Backlog Execution)
+
+Date (UTC): 2026-07-17
+
+### 9.1 Scope
+Post-v0.2.0 backlog execution validation for:
+- CI pipeline enablement (pytest + preflight)
+- Repository hygiene (`.gitignore` hardening)
+- Streamlit smoke test automation
+- Incident-response runbook expansion
+- v0.2.1 draft release documentation
+
+### 9.2 Implemented Changes (Evidence)
+- Added:
+  - `.github/workflows/ci.yml`
+  - `.gitignore`
+  - `test_dashboard_smoke.py`
+- Updated:
+  - `RUNBOOK.md` (IR playbook sections)
+  - `CHANGELOG.md` (v0.2.1 draft section)
+  - `RELEASE_NOTES.md` (v0.2.1 draft header section)
+  - `TODO.md` (backlog completion tracking)
+
+### 9.3 Local Validation
+Commands:
+- `powershell -ExecutionPolicy Bypass -File .\scripts\preflight_check.ps1`
+- `.\.venv\Scripts\python -m pytest -q`
+- `curl -I http://localhost:8511`
+
+Results:
+- Preflight: PASS (`PREFLIGHT_STATUS=OK`)
+- Pytest: PASS (`............. [100%]`)
+- HTTP smoke (dashboard): PASS (`HTTP/1.1 200 OK`)
+
+Notes:
+- WARN for missing `BINANCE_API_KEY` / `BINANCE_API_SECRET` remains acceptable for paper/test context.
+
+### 9.4 CI Remote Validation (GitHub Actions)
+Initial CI run failed due to missing `ccxt` on runner environment:
+- Error: `ModuleNotFoundError: No module named 'ccxt'` during pytest collection.
+
+Remediation applied:
+- Updated CI fallback install list to include:
+  - `ccxt`
+  - `streamlit-autorefresh`
+- Fix commit:
+  - `c23a245`
+  - `fix(ci): include ccxt and streamlit-autorefresh in fallback deps`
+
+Post-fix CI verification:
+- Status: PASS
+- Run link:
+  - `https://github.com/Magmaxx/crbot/actions/runs/29575557041/job/87869080117`
+
+### 9.5 Git Evidence
+- Backlog implementation commit:
+  - `d5ccf37`
+  - `chore(v0.2.1): add CI preflight+pytest, harden gitignore, add dashboard smoke, expand IR runbook, prep release docs`
+- CI fix commit:
+  - `c23a245`
+- Pushes:
+  - `main -> main` successful for both commits
+
+### 9.6 Final Status (v0.2.1 follow-up scope)
+- CI pipeline: PASS (remote verified)
+- Preflight: PASS
+- Pytest: PASS
+- Dashboard smoke: PASS
+- Documentation/runbook updates: PASS
+- Backlog closure tracking: PASS
+
+No blocking items remain for the v0.2.1 follow-up implementation scope.
