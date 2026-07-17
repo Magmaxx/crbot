@@ -16,3 +16,10 @@
   - Notes: `BINANCE_API_KEY` / `BINANCE_API_SECRET` WARN (paper/test setup için kabul edilebilir)
 - [x] `.\.venv\Scripts\python -m pytest -q`
   - Result: PASS (`............. [100%]`)
+
+## Release Publish & Final Sync (v0.2.1)
+
+- [x] Add housekeeping sync note reference in `FINAL_VALIDATION_REPORT.md`
+- [x] Prepare and push release housekeeping docs commit (`865ff9d`)
+- [ ] Create and push git tag `v0.2.1`
+- [ ] Publish GitHub release `v0.2.1` using `RELEASE_NOTES.md`

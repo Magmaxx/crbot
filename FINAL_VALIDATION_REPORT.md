@@ -316,4 +316,22 @@ Interpretation:
 
 ### 11.4 Status
 - Manual thorough fallback validation: PASS
-- Combined with prior API/backend/edge and hygiene checks, release-follow-up verification remains clean.
+
+## 12) Housekeeping Sync Note (Post-Validation Docs Alignment)
+
+Date (UTC): 2026-07-17
+
+### 12.1 Housekeeping Commit Reference
+- Commit: `865ff9d`
+- Message: `docs: release housekeeping for validation evidence sync`
+- Branch/Remote: `main` / `origin/main` (synced)
+
+### 12.2 Scope
+- `CHANGELOG.md` updated with post-release housekeeping entry referencing extended validation evidence.
+- `RELEASE_NOTES.md` updated with dedicated section:
+  - `Post-release Housekeeping (Validation Evidence Sync)`
+  - Includes API/HTTP retest summary, manual UI thorough PASS note, and hygiene closure notes.
+
+### 12.3 Status
+- Documentation alignment between validation report and release docs: PASS
+- No blocking inconsistency remains for v0.2.1 release publishing phase.
