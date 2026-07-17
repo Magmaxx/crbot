@@ -237,3 +237,83 @@ Post-fix CI verification:
 - Backlog closure tracking: PASS
 
 No blocking items remain for the v0.2.1 follow-up implementation scope.
+
+## 10) Extended HTTP Edge-Case + Final Hygiene Verification
+
+Date (UTC): 2026-07-17
+
+### 10.1 Additional HTTP Coverage (Live Streamlit @ :8511)
+Commands:
+- `curl -I http://localhost:8511`
+- `curl -i http://localhost:8511/_stcore/health`
+- `curl -I http://localhost:8511/static/index.html`
+- `curl -i http://localhost:8511/nonexistent-edge-path-404`
+- `curl -i -X POST http://localhost:8511/_stcore/health`
+- `curl -i "http://localhost:8511/%7Bbad%7D?q=%00%00%00"`
+
+Results:
+- `GET /` (HEAD) => `HTTP/1.1 200 OK` (PASS)
+- `GET /_stcore/health` => `HTTP/1.1 200 OK`, body `ok` (PASS)
+- `HEAD /static/index.html` => `HTTP/1.1 200 OK` (PASS)
+- `GET /nonexistent-edge-path-404` => `HTTP/1.1 200 OK` (Streamlit SPA fallback behavior; expected)
+- `POST /_stcore/health` => `HTTP/1.1 405 Method Not Allowed` (PASS / expected method guard)
+- `GET /%7Bbad%7D?q=%00%00%00` => `HTTP/1.1 200 OK` (SPA fallback; server remained stable)
+
+Interpretation:
+- Health endpoint and static asset serving confirmed.
+- Method-level guard works (`405` on invalid health endpoint method).
+- Invalid/nonexistent routes resolve through Streamlit SPA fallback without runtime instability.
+
+### 10.2 UI Thorough Validation Note
+- Browser automation tool remained disabled in environment during this phase.
+- User provided manual full-thorough confirmation in-session: **“hepsi pass”**.
+
+### 10.3 Final Runtime Hygiene
+Commands:
+- `taskkill /F /IM python.exe`
+- `curl -I http://localhost:8511`
+- `cd telegram_bot && git status --short`
+- `cd telegram_bot && git restore logs/trading_bot.log src/__pycache__/config.cpython-313.pyc src/services/__pycache__/feature_engineer.cpython-313.pyc src/services/__pycache__/trading_engine.cpython-313.pyc && git status --short`
+
+Results:
+- Active Streamlit/Python runtime processes terminated.
+- Post-stop port probe: connection failed on `localhost:8511` (expected).
+- Runtime-generated tracked artifacts (`logs/trading_bot.log`, selected `__pycache__` files) restored.
+- Final `git status --short`: clean (no remaining modifications).
+
+### 10.4 Extended Scope Status
+- Additional backend/HTTP edge-case checks: PASS
+- Manual UI thorough confirmation: PASS
+- Final cleanup + repository hygiene reset: PASS
+
+No blocking items remain for extended verification and closure.
+
+## 11) Manual Thorough UI Evidence (Automation-Unavailable Fallback)
+
+Date (UTC): 2026-07-17
+
+### 11.1 Context
+- Browser automation capability was not available in this environment.
+- Validation proceeded with manual thorough UI verification by user, plus runtime log observation from active Streamlit session.
+
+### 11.2 Manual Verification Result
+- User confirmation (in-session): **“hepsi pass”**
+- Interpreted status:
+  - Dashboard açılışı: PASS
+  - Genel sonuç: PASS
+
+### 11.3 Runtime Activity Evidence During Manual Session
+Observed while Streamlit was actively running on `http://localhost:8511`:
+- `services.ml_predictor | ML backend: xgboost`
+- `services.trading_engine | OPEN ... exec_mode=disabled ...`
+- Repeated live updates:
+  - `gui.dashboard | UI update | symbol=BTC/USDT timeframe=1m ... changed=True`
+
+Interpretation:
+- UI loop remained active and continuously updated during manual interaction window.
+- Model/backend + trading-engine integration remained alive in safe execution mode.
+- No blocking runtime instability indicated in observed logs.
+
+### 11.4 Status
+- Manual thorough fallback validation: PASS
+- Combined with prior API/backend/edge and hygiene checks, release-follow-up verification remains clean.
